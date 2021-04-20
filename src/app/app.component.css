@@ -1,0 +1,59 @@
+.example-section {
+    margin: 12px 0;
+  }
+  
+  .example-margin {
+    margin: 0 12px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin-top: 4px;
+  }
+
+  
+.navbar {
+    overflow: hidden;
+    background-color: #f44336;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .navbartitle{
+    font-size: large;
+    color: white; 
+    margin-left: 733px;
+    margin-right: 639px;
+  }
+
+  .container{
+    margin-left: 15%;
+  }
+
+  .Inserirbtn{
+    color: white; 
+    background-color: green;
+    width: 85%;
+    margin-top: 111px;
+  }
+
+  .tableControl{
+    margin-left: 15%;
+    width: 70%;
+  }
+
+  .btnStyle1{
+    background-color: green;
+    margin-right: 30%;
+  }
+
+  .btnStyle2{
+    background-color:rgb(175, 175, 13);
+    margin-right: 30%;
+  }
+
+  .btnStyle3{
+    background-color: red;
+    margin-right: 0%;
+  }
