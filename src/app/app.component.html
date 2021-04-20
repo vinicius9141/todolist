@@ -1,21 +1,20 @@
 <div class="navbar">
-  
- <strong class="navbartitle">Todo List</strong> 
-<a><button mat-mini-fab color="warn" >
-  <mat-icon>home</mat-icon>
-</button> </a>
+  <button mat-mini-fab  color="warn" >
+    <mat-icon>menu</mat-icon>
+  </button> 
+ <strong class="navbartitle">Todo List</strong>
+ 
 
 
-<a><button mat-mini-fab color="warn" >
-  <mat-icon>menu</mat-icon>
-</button></a>
+
+
 </div>
 
 <div class="container">
 
 <button mat-raised-button class="Inserirbtn"><strong>Inserir</strong></button>
 <h1 class="inserirClass">Lista de tarefas</h1>
-<br><br>
+
 
 
 </div>
@@ -25,25 +24,25 @@
 
 
   
-  <ng-container matColumnDef="position">
+  <ng-container matColumnDef="nameTask">
     <mat-header-cell *matHeaderCellDef> Nome da tarefa </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+    <mat-cell style="margin-right: 1%;" *matCellDef="let element"> {{element.nameTask}} </mat-cell>
   </ng-container>
 
   
-  <ng-container matColumnDef="name">
+  <ng-container matColumnDef="desc">
     <mat-header-cell *matHeaderCellDef> Descrição da tarefa </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    <mat-cell *matCellDef="let element"> {{element.desc}} </mat-cell>
   </ng-container>
 
   
-  <ng-container matColumnDef="weight">
+  <ng-container matColumnDef="author">
     <mat-header-cell *matHeaderCellDef> Quem realizou</mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+    <mat-cell *matCellDef="let element"> {{element.author}} </mat-cell>
   </ng-container>
 
   
-  <ng-container matColumnDef="symbol">
+  <ng-container matColumnDef="actions">
     <mat-header-cell *matHeaderCellDef> Ações </mat-header-cell>
     <mat-cell *matCellDef="let element"> 
       <button mat-mini-fab class="btnStyle1">
