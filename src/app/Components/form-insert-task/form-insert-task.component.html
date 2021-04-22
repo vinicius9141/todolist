@@ -1,0 +1,22 @@
+    
+    <mat-card class="container" [formGroup]="formTask">
+        <mat-form-field appearance="fill">
+            <mat-label>Nome da tarefa</mat-label>
+            <input type="text" matInput formControlName="taskName">
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Descrição da tarefa</mat-label>
+            <input type="text" matInput formControlName="taskDesc">
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Quem realizará?</mat-label>
+            <mat-select type="text" formControlName="taskAuthor">
+            <mat-option value="Gabriel">Gabriel</mat-option>
+            <mat-option value="Vinicius">Vinicius</mat-option>
+            <mat-option value="Gabriel/Vinicius">Gabriel/Vinicius</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="taskRegister()">Inserir</button>
+    </mat-card>

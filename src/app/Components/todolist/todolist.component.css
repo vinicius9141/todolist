@@ -1,40 +1,22 @@
 
-.navbar {
-    float: left;  
-    background-color: #f44336;
-    position: fixed;
-    
-    width: 100%;
-    margin-bottom: 3%;
-  }
-
-  .navbartitle{
-    margin-top: 1%;
-    font-size: large;
-    color: white; 
-    margin-left: 45%;
-    margin-right: auto;
-  }
-
- 
-
+.container{
+  display: flex;
+}
   .Inserirbtn{
     color: white; 
-    background-color: green;
-    width: 80%;
+    background-color: #008000;
     margin-top: 12%;
-    margin-bottom: 3%;
-    margin-left: 10%;
+    margin-left: 3%;
   }
 
   .inserirClass{
     margin-left: 35%;
+    margin-top: 12%;
     align-self: center;
     font-size: xx-large;
   }
 
   .tableControl{
-   
     margin-left: auto;
     margin-right: auto;
     height: auto;
@@ -42,16 +24,34 @@
   }
 
   .btnStyle1{
-    background-color: green;
+    background-color: #008000;
     margin-right: 20%;
   }
 
   .btnStyle2{
-    background-color:rgb(175, 175, 13);
+    background-color:#afaf0d;
     margin-right: 20%;
   }
 
   .btnStyle3{
-    background-color: red;
+    background-color: #ff0000;
     margin-right: 5%;
   }
+
+
+
+
+
+
+
+  table {
+    margin-top: 15px;
+    border: solid 2px black;
+    text-align: center;
+  }
+  table tr td {
+    text-align: center;
+    border: solid 1px red;
+    padding: 5px;
+  }
+  

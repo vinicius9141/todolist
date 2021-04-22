@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ListService } from '../../Service/list.service'
+import { Task } from 'src/app/Models/list';
+import {Injectable} from '@angular/core';
 
 export interface ListElement {
   nameTask: string;
@@ -7,11 +10,6 @@ export interface ListElement {
   symbol: string;
 }
 
-const TO_DO_LIST: ListElement[] = [
-  { nameTask: 'Desenvolver Back-end', desc: 'Fazer o banco de dados do To-do list', author: 'Vinicius', symbol: 'H'},
-  { nameTask: 'Desenvolver Front-end', desc: 'Fazer o design da página do To-do list', author: 'Gabriel', symbol: 'He'},
- 
-];
 
 @Component({
   selector: 'app-todolist',
@@ -21,11 +19,39 @@ const TO_DO_LIST: ListElement[] = [
 
 export class TodolistComponent implements OnInit {
   displayedColumns: string[] = ['nameTask', 'desc', 'author', 'actions'];
-  dataSource = TO_DO_LIST;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  
+  constructor(private ListService: ListService) { }
+  
+  public tasks!: Task[];
+  
+  ngOnInit(){  
+    this.ListService.getTasks()
+      .subscribe(
+        tasks =>{
+          this.tasks = tasks;
+          console.log(tasks);
+        },
+        error =>{
+          console.log(error)
+        }
+      );
   }
+  
+  deleteTask(){
+    var response = window.confirm('Tem certeza?')
+
+    if(response === true){
+      this.ListService.deleteTask()
+      .subscribe(result =>{
+        console.log(result)
+      })
+    }else{
+      alert('else')
+    }
+    
+  }
+  
 
 }
+

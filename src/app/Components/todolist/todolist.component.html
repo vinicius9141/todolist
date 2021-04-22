@@ -1,57 +1,63 @@
-<div class="navbar">
-    <button mat-mini-fab  color="warn" >
-      <mat-icon>menu</mat-icon>
-    </button> 
-   <strong class="navbartitle">Todo List</strong>
-   
+
   
-  
-  
-  
+  <div>
+  <div  class="container">
+    <h1 class="inserirClass">Lista de tarefas</h1>
+    <button mat-mini-fab  class="Inserirbtn" [routerLink]="['/inserttask']" ><mat-icon>add</mat-icon></button>
   </div>
-  
-  <div class="container">
-  
-  <button mat-raised-button class="Inserirbtn"><strong>Inserir</strong></button>
-  <h1 class="inserirClass">Lista de tarefas</h1>
-  
   
   
   </div>
   
   <mat-card class="tableControl">
-  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <mat-table  class="mat-elevation-z8" *ngFor="let task of tasks">
   
   
     
     <ng-container matColumnDef="nameTask">
-      <mat-header-cell *matHeaderCellDef> Nome da tarefa </mat-header-cell>
-      <mat-cell style="margin-right: 1%;" *matCellDef="let element"> {{element.nameTask}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef > {{ task.nometarefa }} </mat-header-cell>
+      <mat-cell style="margin-right: 1%;" > </mat-cell>
     </ng-container>
-  
+  sss
     
     <ng-container matColumnDef="desc">
-      <mat-header-cell *matHeaderCellDef> Descrição da tarefa </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.desc}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef> {{ task.desctarefa }} </mat-header-cell>
+      <mat-cell >  </mat-cell>
     </ng-container>
   
     
     <ng-container matColumnDef="author">
-      <mat-header-cell *matHeaderCellDef> Quem realizou</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.author}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef> {{ task.quemfaz }}</mat-header-cell>
+      <mat-cell > </mat-cell>
     </ng-container>
   
     
     <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef> Ações </mat-header-cell>
-      <mat-cell *matCellDef="let element"> 
+      <mat-header-cell *matHeaderCellDef> 
         <button mat-mini-fab class="btnStyle1">
-          <mat-icon>check</mat-icon>
-        </button>
+        <mat-icon>
+          check
+        </mat-icon>
+      </button>
+
         <button mat-mini-fab class="btnStyle2">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-mini-fab class="btnStyle3">
+        <mat-icon>
+          edit
+        </mat-icon>
+      </button> 
+        
+      <button mat-mini-fab class="btnStyle3" (click)="deleteTask()">
+        <mat-icon>
+          clear
+        </mat-icon>
+      </button>
+    </mat-header-cell>
+
+    
+  
+  
+      <mat-cell *matCellDef="let element">         
+        <button mat-mini-fab class="btnStyle2">
           <mat-icon>clear</mat-icon>
         </button>
      </mat-cell>
@@ -62,3 +68,22 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>
   </mat-card>
+
+
+  <!-- <table>
+    <tr>
+      <th>Nome da terefa</th>
+      <th>Desc. Tarefa</th>
+      <th>Quem realizou?</th>
+      <th>Ações</th>
+    </tr>
+    <tr *ngFor="let task of tasks">
+      <td>{{ task.nometarefa }}</td>
+      <td>{{ task.desctarefa }}</td>
+      <td>{{ task.quemfaz }}</td>
+      <td><button>Realizada</button></td>
+      <td><button>Editar</button></td>
+      <td><button>Excluir</button></td>
+      
+    </tr>
+  </table> -->

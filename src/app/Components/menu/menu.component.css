@@ -1,0 +1,18 @@
+
+.navbar {
+    float: left;  
+    background-color: #f44336;
+    position: fixed;
+    
+    width: 100%;
+    margin-bottom: 3%;
+  }
+
+  .navbartitle{
+    margin-top: 1%;
+    font-size: large;
+    color: white; 
+    margin-left: 45%;
+    margin-right: auto;
+  }
+
